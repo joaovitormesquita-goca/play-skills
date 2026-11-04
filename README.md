@@ -31,6 +31,15 @@ As skills não fixam métricas. Réguas como gasto mínimo, CTR, ROAS e dias de 
 | `regras-do-play` | Regras de operação que valem para todas as marcas: o que pede ordem, panorama antes de lote, conferir depois, o que nunca sobe |
 | `dashroi` | Como ler gasto, receita e ROI no dashRoi sem cair nas armadilhas, e qual ROI responde qual pergunta |
 | `plaisson` | Como o Plaisson funciona (agendamento, motores, regras, gates) e como ler e mexer nele com segurança |
+| `produto-do-anuncio` | Descobre o produto de cada anúncio pelo nome, pela pauta ou pela imagem |
+| `admanage-midia` | Põe a mídia no formato do draft: pasta do Dropbox, URL ou anúncios existentes; tira duplicados e junta feed + story |
+| `admanage-draft` | Cria, lê, edita e confere drafts do AdManage pelo conector |
+| `admanage-parcerias` | Casa o @handle com as parcerias aprovadas e aplica o padrão do perfil para quem não tem |
+| `admanage-copy-e-link` | Copy por template e link (PDP, LP, home) por produto, com alertas de preço e promoção |
+| `campanhas-por-produto` | Escolhe campanha e ad sets ativos para cada produto pelo tipo de conteúdo |
+| `capacidade-de-paginas` | Escolhe a página de cada anúncio respeitando o limite de anúncios por página |
+| `admanage-lancar` | Lança um draft com pré-voo, acompanha o batch e relança só o que falhou |
+| `subir-conteudo-humanizado` | Processo de ponta a ponta: do link da pasta de creators, TTS ou influs ao draft e ao lançamento |
 
 O plano das próximas skills está em [docs/plano-de-skills.md](docs/plano-de-skills.md).
 

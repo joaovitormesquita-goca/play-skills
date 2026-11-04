@@ -32,8 +32,8 @@ Use o modelo em `references/modelo-perfil.md`. Preencha nesta ordem:
 | Slug(s) da marca e campanhas automatizadas | Plaisson: `list_brands`, depois `get_brand_dashboard(slug)` |
 | Contas de anúncio | AdManage: `list_ad_accounts`, ou Meta: `ads_get_ad_accounts` |
 | Páginas e Instagram | AdManage: `list_pages`, ou Meta: `ads_get_ad_account_pages` |
-| Parcerias de creators | AdManage: `list_partnership_permissions` |
-| Templates de copy | AdManage: `list_ad_copy_templates` |
+| Workspace do AdManage e página/Instagram padrão de cada conta | AdManage: `list_workspaces` e `get_launch_context` (`accountId`) |
+| Templates de copy | AdManage: `list_ad_copy_templates` com `fields: ["id", "name"]` |
 | Grupos de ad sets favoritos | AdManage: `list_favorite_adset_groups` |
 | Padrão de nome das campanhas | Os nomes das campanhas ativas em `get_brand_dashboard(slug)`: descreva o padrão com 2 ou 3 exemplos |
 
@@ -45,7 +45,14 @@ Se um conector não estiver ligado, diga qual faltou e pergunte o dado ao piloto
 - Para que serve cada conta e cada página (compra, teste, influ...).
 - As réguas da marca: quando um teste é aprovado, quando um anúncio é cortado, o ROAS de referência por tipo de campanha.
 - O que pede confirmação antes de executar, além do padrão do plugin.
-- A parceria padrão quando o creator não tem parceria.
+- A parceria padrão quando o creator não tem parceria, e as exceções.
+- O dicionário de produtos (sinônimos, produtos que se confundem, fora de linha).
+- O padrão de nome de cada tipo de conteúdo e onde ficam o produto e o @handle.
+- O destino de cada tipo de conteúdo (campanha e ad sets) e as campanhas que não contam como "já subido".
+- A regra de link (PDP, LP, home) e a UTM padrão.
+- As preferências de operação (quem escolhe a página, o que fazer com ad set cheio, produto incerto, Post ID).
+
+A lista de parcerias (`list_partnership_permissions`) não entra no perfil: é grande e muda todo dia. A skill `admanage-parcerias` lê ao vivo.
 
 **Nunca invente uma régua nem copie a de outra marca.** Se o piloto não souber, deixe `a definir` no campo.
 
