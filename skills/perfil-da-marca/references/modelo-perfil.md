@@ -8,6 +8,9 @@ Cada campo leva a data em que foi conferido e a fonte (conector, piloto, planilh
 ## Identificação
 - Marca:
 - Slug(s) no Plaisson:
+- Quem decide motores e regras do Plaisson nesta marca:
+- Slug e família no dashRoi (`gocase`, `gobeaute` ou `jump`):
+- Fonte da receita atribuída (Plausible, GA4, UTM…):
 - Site / domínio dos links:
 
 ## Contas de anúncio (Meta)

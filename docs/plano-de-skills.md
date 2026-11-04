@@ -49,9 +49,9 @@ O que muda por marca fica no perfil (ver "O que entra no perfil da marca").
 | Skill | O que ensina | Fontes |
 |---|---|---|
 | `perfil-da-marca` ✅ | Cria e lê o perfil da marca | — |
-| `regras-do-play` | Regras transversais (lista abaixo) | CLAUDE.md do content; processos Orçamento, Varredura, Abastecimento e Desligar CX; evento Black Month; correções recorrentes nas sessões |
-| `dashroi` | Fuso (UTC → BRT, filtrar por intervalo e não por `::date`); IOF com data de vigência; não somar fontes duplicadas; peso de kit; join por nome normalizado; horas com `spend>0`; atraso por campanha. O dashRoi **não tem o dia corrente**: para hoje, usar a Meta. Campanha ou ad set **recém-criado** não aparece. Frescor do ETL. Os tipos de ROI e o Σ÷Σ. SQL de base com `brand_id` como parâmetro | Contextos do dashRoi e ROIs; `text-to-sql`; sessões ce826370, 606e27a4, 2dc1bcfb |
-| `plaisson` | Agendamento × motores; como uma regra casa; cooldown; gates; pods; ABO; `get_logs` truncado; `fresh` com cota; `configSource=sheet`. Valores sempre ao vivo pelo `get_rules` | Contexto Plaisson e os motores; decisões do intra |
+| `regras-do-play` ✅ | Regras transversais (lista abaixo) | CLAUDE.md do content; processos Orçamento, Varredura, Abastecimento e Desligar CX; evento Black Month; correções recorrentes nas sessões |
+| `dashroi` ✅ | Fuso (UTC → BRT, filtrar por intervalo e não por `::date`); IOF com data de vigência; não somar fontes duplicadas; peso de kit; join por nome normalizado; horas com `spend>0`; atraso por campanha. O dashRoi **não tem o dia corrente**: para hoje, usar a Meta. Campanha ou ad set **recém-criado** não aparece. Frescor do ETL. Os tipos de ROI e o Σ÷Σ. SQL de base com `brand_id` como parâmetro | Contextos do dashRoi e ROIs; `text-to-sql`; sessões ce826370, 606e27a4, 2dc1bcfb |
+| `plaisson` ✅ | Agendamento × motores; como uma regra casa; cooldown; gates; pods; ABO; `get_logs` truncado; `fresh` com cota; `configSource=sheet`. Valores sempre ao vivo pelo `get_rules` | Contexto Plaisson e os motores; decisões do intra |
 
 As regras transversais de `regras-do-play`:
 - **Ordem explícita** para lançar, ativar, mudar orçamento, arquivar ou apagar. Pedidos como "não executa ainda", "só planeja" e "monta sem lançar" são respeitados.
@@ -190,7 +190,7 @@ As preferências de operação também entram no perfil. São escolhas do piloto
 | S2 | O `update_draft_rows` aguenta um draft grande (centenas de linhas) a um custo aceitável? | `admanage-draft` |
 | S3 | O `list_partnership_permissions` cobre as mesmas parcerias do export da tela (~420)? | `admanage-parcerias` |
 | S4 | Quais conectores os pilotos têm: dashRoi, Supabase, Metabase, GoHits, Sheets, Google Chat? | Ondas 1 a 4 |
-| S5 | As marcas gobeaute têm `site_sales` no dashRoi? Qual a fonte de atribuição delas e de onde vem o catálogo (PDP)? | `dashroi`, `admanage-copy-e-link`, `comparar-evento`, `resultado-de-live` |
+| S5 | **Respondido em parte em 04/11/2026:** a receita mora em tabelas por família (`site_sales` + Plausible/GA4 na Gocase; `beaute_sales` + `beaute_attribution_utm` nas gobeaute; `jump_sales` na Jump), e a camada comum é `vw_brand_product_daily` (ver skill `dashroi`). Falta: de onde vem o catálogo (PDP) das gobeaute | `dashroi`, `admanage-copy-e-link`, `comparar-evento`, `resultado-de-live` |
 | S6 | O GoHits transcreve e lê os vídeos de influ e de afiliado? Quanto tempo leva a fila (nas sessões, ~35 min)? | `revisao-de-criativo`, `varredura-promocao`, variante influ |
 | S7 | Criar campanha em rascunho por MCP: o `ads_create_campaign` cria publicada; testar o `duplicate_campaign` e o `duplicate_adset` do AdManage | `campanhas-em-rascunho` |
 | S8 | Renomear em lote: o `update_name` do AdManage aceita vários anúncios? Na Meta é uma chamada por anúncio | `marcar-promovidos`, `renomear-em-massa` |

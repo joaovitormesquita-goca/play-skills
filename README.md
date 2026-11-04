@@ -28,6 +28,11 @@ As skills não fixam métricas. Réguas como gasto mínimo, CTR, ROAS e dias de 
 | Skill | Para que serve |
 |---|---|
 | `perfil-da-marca` | Cria, atualiza ou lê o perfil da marca que as outras skills usam |
+| `regras-do-play` | Regras de operação que valem para todas as marcas: o que pede ordem, panorama antes de lote, conferir depois, o que nunca sobe |
+| `dashroi` | Como ler gasto, receita e ROI no dashRoi sem cair nas armadilhas, e qual ROI responde qual pergunta |
+| `plaisson` | Como o Plaisson funciona (agendamento, motores, regras, gates) e como ler e mexer nele com segurança |
+
+O plano das próximas skills está em [docs/plano-de-skills.md](docs/plano-de-skills.md).
 
 ## Propor mudança
 
